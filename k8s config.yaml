@@ -1,0 +1,20 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: <base64-encoded CA certificate>
+    server: https://kubernetes.mycompany.com
+  name: mycluster
+contexts:
+- context:
+    cluster: mycluster
+    namespace: my-namespace
+    user: myuser
+  name: mycontext
+current-context: mycontext
+kind: Config
+preferences: {}
+users:
+- name: myuser
+  user:
+    client-certificate-data: <base64-encoded client certificate>
+    client-key-data: <base64-encoded client key>
